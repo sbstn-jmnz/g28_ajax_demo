@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:destroy, :edit, :update]
+  before_action :set_comment, only: [:destroy, :edit, :update, :show]
 
   def index
     @comments = unless params[:q]
@@ -12,6 +12,9 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(content: comment_params)
     @comment.save
+  end
+
+  def show
   end
 
   def destroy

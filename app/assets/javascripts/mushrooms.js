@@ -91,7 +91,16 @@ $(document).ready(function(){
     })
 
     // Show
-    
+    $('ul').on('click', '.show_comment',function(e){
+      e.preventDefault()
+      var id = $(this).closest('li')[0].id.split('_')[1]
+      $.ajax({
+        type: "get",
+        url: "/comments/"+id,
+        dataType: "script"
+      });
+    })
+
   })
 
 
