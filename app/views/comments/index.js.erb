@@ -1,0 +1,5 @@
+ // clear all comments if any
+$('ul').html('')
+<% @comments.each do |comment| %>
+  $('ul').append('<li><%= comment.content %></li>');
+<% end %>
